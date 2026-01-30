@@ -37,6 +37,7 @@ using Server.Spells.Spellweaving;
 using Server.Targeting;
 using BaseQuestGump = Server.Engines.MLQuests.Gumps.BaseQuestGump;
 using CalcMoves = Server.Movement.Movement;
+using QuestLogGump = Server.Engines.MLQuests.Gumps.QuestLogGump;
 using QuestOfferGump = Server.Engines.MLQuests.Gumps.QuestOfferGump;
 using RankDefinition = Server.Guilds.RankDefinition;
 

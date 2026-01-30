@@ -9,6 +9,8 @@ using Server.Engines.MLQuests.Objectives;
 using Server.Gumps;
 using Server.Items;
 using Server.Mobiles;
+using QuestLogGump = Server.Engines.MLQuests.Gumps.QuestLogGump;
+using QuestRewardGump = Server.Engines.MLQuests.Gumps.QuestRewardGump;
 
 namespace Server.Engines.MLQuests
 {
