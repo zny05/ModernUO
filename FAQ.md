@@ -1,5 +1,15 @@
 # Frequently Asked Questions
 
+## What is ModernUO used for? What tasks is it good at?
+ModernUO is an Ultima Online server emulator built for the modern era. It is used to:
+- **Host private Ultima Online shards** – Run your own UO game server for players to connect to with standard UO clients (e.g. ClassicUO).
+- **Game content scripting** – Write C# scripts to create custom quests, monsters, items, spells, skills, and game systems using the `UOContent` project.
+- **Server administration** – Manage players, worlds, and game events through in-game commands.
+- **Modding & customization** – Extend or override any game mechanic. The scripting system allows full customization of gameplay.
+- **Development & research** – Study and recreate classic Ultima Online mechanics with a clean, well-structured .NET codebase.
+
+ModernUO targets modern .NET and is optimized for performance, security, and developer productivity.
+
 ## What has changed since RunUO 2.7?
 We have compiled a non-exhaustive list of the features changes, technical improvements, and new additions.
 - See: [RunUO to ModernUO](./RUNUO_TO_MODERNUO.md)
