@@ -462,6 +462,9 @@ public static class Core
 #endif
 
         var idleCPU = ServerConfiguration.GetSetting("core.enableIdleCPU", isDebugMode);
+        var idleCpuThreshold = ServerConfiguration.GetSetting("core.idleCpuThreshold", 125);
+        var idleCpuSleepMs = ServerConfiguration.GetSetting("core.idleCpuSleepMs", 2);
+        var idleCpuNoClientSleepMs = ServerConfiguration.GetSetting("core.idleCpuNoClientSleepMs", 10);
 
         try
         {
@@ -483,6 +486,11 @@ public static class Core
 
                 // Handle networking
                 NetState.Slice();
+
+                if (idleCPU && NetState.Instances.Count == 0)
+                {
+                    Thread.Sleep(Math.Max(1, idleCpuNoClientSleepMs));
+                }
 
                 // Execute captured post-await methods (like Timer.Pause)
                 LoopContext.ExecuteTasks();
@@ -516,9 +524,9 @@ public static class Core
 
                     last = now;
 
-                    if (idleCPU && cyclesPerSecond > 125)
+                    if (idleCPU && cyclesPerSecond > idleCpuThreshold)
                     {
-                        Thread.Sleep(2);
+                        Thread.Sleep(Math.Max(1, idleCpuSleepMs));
                     }
                 }
             }
